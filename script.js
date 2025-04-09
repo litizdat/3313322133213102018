@@ -6,12 +6,11 @@ document.addEventListener('scroll', function () {
   
     const scrollProgress = scrollY / maxScroll; 
   
-   
     const scaleFactor = 1 + scrollProgress * 300;
     logoContainer.style.transform = `translate(-50%, -50%) scale(${scaleFactor})`;
   
-
-    const fadeInProgress = Math.min(scrollProgress / 0.1, 1);
+    const startFade = 0.05; // 5%
+    const fadeInProgress = Math.min(Math.max((scrollProgress - startFade) / 0.1, 0), 1);
     text.style.opacity = fadeInProgress;
   });
   
