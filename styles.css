@@ -6,12 +6,12 @@
 }
 
 html {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
   }
   
   html::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Яндекс Браузер */
+    display: none; 
   }
   
 
@@ -35,11 +35,11 @@ body {
     position: fixed;
     top: 50%;
     left: 46.5%;
-    transform: translate(-50%, -50%); /* Центрирование логотипа */
-    transform-origin: center center; /* Центрируем трансформацию */
-    width: 300%; /* Размер контейнера */
+    transform: translate(-50%, -50%); 
+    transform-origin: center center; 
+    width: 300%;
     height: 300%;
-    z-index: 1000; /* Слой поверх всего */
+    z-index: 1000; 
 }
 
 .logo-mask {
@@ -50,7 +50,7 @@ body {
     height: 100%;
     mask-image: url('logo.svg');
     -webkit-mask-image: url('logo.svg');
-    mask-size: contain; /* Маска растягивается по контейнеру */
+    mask-size: contain;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
     mask-position: center;
@@ -120,7 +120,7 @@ body {
     letter-spacing: 1.3em;
     white-space: nowrap;
     overflow: hidden;
-    opacity: 0; /* ← добавляем начальную прозрачность */
+    opacity: 0; 
 
     transition: opacity 0.3s  ease-in;
 }
@@ -135,18 +135,18 @@ body {
 
 @media (max-width: 768px) {
     .text {
-      font-size: 0.5rem; /* сделаем надпись меньше на мобиле */
+      font-size: 0.5rem;
     }
   
     .logo-container {
-      width: 600%;  /* уменьшаем размер контейнера для SVG */
+      width: 600%; 
       height: 600%;
-      top: 50%; /* чуть сдвинем вверх */
+      top: 50%;
       left: 45%;
     }
   
     .logo-mask {
-      mask-size: 80%; /* увеличим маску, чтобы она была ближе к экрану */
+      mask-size: 80%;
       -webkit-mask-size: 80%;
     }
   
