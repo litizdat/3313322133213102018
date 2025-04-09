@@ -6,12 +6,12 @@
 }
 
 html {
-    scrollbar-width: none;
-    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
   }
   
   html::-webkit-scrollbar {
-    display: none; 
+    display: none;
   }
   
 
@@ -37,7 +37,7 @@ body {
     left: 46.5%;
     transform: translate(-50%, -50%); 
     transform-origin: center center; 
-    width: 300%;
+    width: 300%; 
     height: 300%;
     z-index: 1000; 
 }
@@ -50,7 +50,7 @@ body {
     height: 100%;
     mask-image: url('logo.svg');
     -webkit-mask-image: url('logo.svg');
-    mask-size: contain;
+    mask-size: contain; 
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
     mask-position: center;
@@ -121,8 +121,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     opacity: 0; 
-
-    transition: opacity 0.1s  ease-in;
+    transition: opacity 0.01s ease;
 }
 
 
@@ -135,18 +134,18 @@ body {
 
 @media (max-width: 768px) {
     .text {
-      font-size: 0.5rem;
+      font-size: 0.5rem; 
     }
   
     .logo-container {
-      width: 600%; 
+      width: 600%;  
       height: 600%;
-      top: 50%;
+      top: 50%; 
       left: 45%;
     }
   
     .logo-mask {
-      mask-size: 80%;
+      mask-size: 80%; 
       -webkit-mask-size: 80%;
     }
   
