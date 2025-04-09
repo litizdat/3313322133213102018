@@ -4,14 +4,14 @@ document.addEventListener('scroll', function () {
     const scrollY = window.scrollY;
     const maxScroll = document.body.scrollHeight - window.innerHeight;
   
-    const scrollProgress = scrollY / maxScroll; // 0 до 1
+    const scrollProgress = scrollY / maxScroll; 
   
-    // Масштаб логотипа
+   
     const scaleFactor = 1 + scrollProgress * 300;
     logoContainer.style.transform = `translate(-50%, -50%) scale(${scaleFactor})`;
   
-    // Прозрачность текста
-    const fadeInProgress = Math.min(scrollProgress / 0.1, 1); // 5% скролла = полная видимость
+
+    const fadeInProgress = Math.min(scrollProgress / 0.1, 1);
     text.style.opacity = fadeInProgress;
   });
   
