@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'Pokrovka';
+    src: url('Pokrovka.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE и Edge */
+  }
+  
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Яндекс Браузер */
+  }
+  
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+    text-align: center;
+    height: 300vh;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+
+  .logo-container {
+    position: fixed;
+    top: 50%;
+    left: 46.5%;
+    transform: translate(-50%, -50%); /* Центрирование логотипа */
+    transform-origin: center center; /* Центрируем трансформацию */
+    width: 300%; /* Размер контейнера */
+    height: 300%;
+    z-index: 1000; /* Слой поверх всего */
+}
+
+.logo-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mask-image: url('logo.svg');
+    -webkit-mask-image: url('logo.svg');
+    mask-size: contain; /* Маска растягивается по контейнеру */
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: black;
+    z-index: 1;
+}
+
+.logo-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 0; 
+    pointer-events: none; 
+}
+
+
+.noise {
+    position: fixed;
+    width: 1000vw;
+    height: 1000vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.noise::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+    background-size: 200px;
+    background-repeat: repeat;
+    opacity: 0.5;
+    animation: grain 0.25s steps(10) infinite;
+}
+
+@keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-15px, -20px); }
+    20% { transform: translate(-25px, 10px); }
+    30% { transform: translate(10px, -50px); }
+    40% { transform: translate(-10px, 50px); }
+    50% { transform: translate(-30px, 20px); }
+    60% { transform: translate(30px, -10px); }
+    70% { transform: translate(0px, 30px); }
+    80% { transform: translate(20px, 70px); }
+    90% { transform: translate(-25px, 30px); }
+} 
+
+.text {
+    position: fixed;
+    top: 50.2%;
+    left: 50.6%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3em;
+    color: black;
+    z-index: -1;
+    font-family: 'Pokrovka', sans-serif;
+    letter-spacing: 1.3em;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0; /* ← добавляем начальную прозрачность */
+
+    transition: opacity 0.3s  ease-in;
+}
+
+
+@media (max-width: 600px) {
+    .text {
+        font-size: 1.3em;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .text {
+      font-size: 0.5rem; /* сделаем надпись меньше на мобиле */
+    }
+  
+    .logo-container {
+      width: 600%;  /* уменьшаем размер контейнера для SVG */
+      height: 600%;
+      top: 50%; /* чуть сдвинем вверх */
+      left: 45%;
+    }
+  
+    .logo-mask {
+      mask-size: 80%; /* увеличим маску, чтобы она была ближе к экрану */
+      -webkit-mask-size: 80%;
+    }
+  
+    .logo-background {
+      width: 100%;
+      height: 100%;
+    }
+  
+    .noise {
+      width: 300vw;
+      height: 300vh;
+    }
+  }
