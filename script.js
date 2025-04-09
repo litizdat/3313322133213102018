@@ -9,8 +9,8 @@ document.addEventListener('scroll', function () {
     const scaleFactor = 1 + scrollProgress * 300;
     logoContainer.style.transform = `translate(-50%, -50%) scale(${scaleFactor})`;
   
-    const startFade = 0.1; 
-    const fadeInProgress = Math.min(Math.max((scrollProgress - startFade) / 0.1, 0), 1);
+    const startFade = 0.05; 
+    const fadeInProgress = Math.min(Math.max((scrollProgress - startFade) / 0.05, 0), 1);
     text.style.opacity = fadeInProgress;
   });
   
