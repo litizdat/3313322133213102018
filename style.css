@@ -19,7 +19,6 @@ body {
   transition: transform 0.1s ease-out;
 }
 
-/* фон-шум, как у тебя */
 .noise {
   position: fixed;
   width: 1000vw;
@@ -79,4 +78,31 @@ body {
   z-index: 5;
   transition: opacity 0.1s ease;
   padding-left: 20px;
+}
+
+#soon {
+  font-size: 1.3em;
+  letter-spacing: 1.3em;
+}
+
+@media (max-width: 768px) {
+  #soon {
+    font-size: 1em;
+    letter-spacing: 0.6em;
+  }
+
+  #logo {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  #soon {
+    font-size: 0.6em;
+    letter-spacing: 0.6em;
+  }
+
+  #logo {
+    width: 100px;
+  }
 }
