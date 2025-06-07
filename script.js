@@ -8,10 +8,10 @@ window.addEventListener('scroll', () => {
 
   const isMobile = window.innerWidth < 768;
 
-  const maxOffsetX = isMobile ? 8800 : 7700;
-  const maxOffsetY = isMobile ? -3300 : -3000;
+  const maxOffsetX = isMobile ? 6600 : 7700;
+  const maxOffsetY = isMobile ? -2400 : -3000;
 
-  const maxScale = isMobile ? 100 : 90;
+  const maxScale = isMobile ? 150 : 90;
 
   const moveX = progress * maxOffsetX;
   const moveY = progress * maxOffsetY;
